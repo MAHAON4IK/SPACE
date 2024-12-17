@@ -1,0 +1,21 @@
+x=0:0.01:20;
+e=exp(1);
+y=(((e.^x) + (e.^(-2.*x)))./((x.^2)+1)).*sin(x);
+plot(x ,y, 'b');
+grid;
+title('Вариант 1, функция f(x)');
+xlabel('Ось x');
+ylabel('Ось y');
+w=logspace(-2,2,100);
+s=j.*w;
+A=[1 2 3 2];
+B=[1 3 2 2 9];
+F=polyval(A,s)./polyval(B,s);
+figure (2);
+F=polyval(A,s)./polyval(B,s);
+semilogx(imag(s),F,'r');
+
+title('Вариант 1, функция F(w)');
+xlabel('Ось w');
+ylabel('Ось F');
+grid;
